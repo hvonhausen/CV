@@ -2,7 +2,7 @@
 
 Personal CV managed as a small webapp. Content is stored as structured JSON in both English and Spanish; on every push to `main`, GitHub Actions renders two static HTML pages and two print-ready PDFs and deploys everything to GitHub Pages.
 
-**Live site:** https://hvonhausen.github.io/CV/ *(available after the first successful deploy)*
+**Live site:** https://hvonhausen.github.io/CV/ 
 
 **LinkedIn:** https://www.linkedin.com/in/hvonhausen/
 
