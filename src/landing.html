@@ -4,148 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hernan von Hausen — CV</title>
-    <meta
-      name="description"
-      content="Hernan von Hausen Cardenas — Product Business Analyst. Personal CV in English and Spanish."
-    />
+    <meta name="description" content="Hernan von Hausen Cardenas — Product Business Analyst. CV in English and Spanish." />
     <meta property="og:title" content="Hernan von Hausen — CV" />
-    <meta
-      property="og:description"
-      content="Product Business Analyst · Santiago, Chile. CV in English and Spanish."
-    />
+    <meta property="og:description" content="Product Business Analyst · Santiago, Chile" />
     <meta property="og:type" content="profile" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./assets/landing.css" />
+    <style>
+      .lang-hidden { display: none; }
+
+      .toolbar-left {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-ink);
+        letter-spacing: -0.01em;
+      }
+
+      #lang-toggle {
+        background: none;
+        border: 1px solid var(--color-rule);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 13.5px;
+      }
+
+      #lang-toggle:hover {
+        background: var(--color-accent-soft);
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+      }
+
+      /* Override the .header (profile block inside paper) for embedded mode */
+      .paper .cv-head {
+        border-bottom: 2px solid var(--color-ink);
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+      }
+
+      .paper .cv-head .name {
+        font-size: 28px;
+      }
+
+      footer.page-footer {
+        max-width: var(--page-max);
+        margin: 0 auto 40px;
+        padding: 0 24px;
+        color: var(--color-muted);
+        font-size: 12.5px;
+        text-align: center;
+      }
+
+      footer.page-footer a { color: var(--color-muted); }
+    </style>
   </head>
-  <body class="landing-body">
-    <main class="hero" role="main">
-      <section class="hero-card">
-        <div class="avatar-wrap">
-          <img
-            class="avatar"
-            src="./assets/profile-placeholder.svg"
-            alt="Hernan von Hausen"
-            width="220"
-            height="220"
-          />
+  <body>
+    <header class="toolbar" role="banner">
+      <div class="toolbar-inner">
+        <div class="toolbar-left">Hernan von Hausen</div>
+        <div class="toolbar-actions">
+          <button class="btn" id="lang-toggle" onclick="switchLang()">Español</button>
+          <a class="btn btn-primary" id="pdf-btn"
+             href="./en/cv.pdf"
+             download="CV_Hernan_von_Hausen_en.pdf">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download CV
+          </a>
         </div>
+      </div>
+    </header>
 
-        <h1 class="hero-name">Hernan von Hausen Cardenas</h1>
-        <p class="hero-role">Product Business Analyst</p>
-        <p class="hero-affiliation">Cencosud S.A. · Santiago, Chile</p>
+    <main>
+      <article class="paper" id="cv-en" lang="en" role="main" aria-label="CV in English">
+        {{{cvEn}}}
+      </article>
 
-        <p class="hero-bio">
-          Over four years driving data-driven decisions in retail, mobility, and food service.
-          Currently leading product requirements, backlog prioritization, and stakeholder alignment
-          for a real-time inventory engine at one of Latin America's largest retailers.
-        </p>
-
-        <nav class="icon-row" aria-label="Contact">
-          <a
-            class="icon-btn"
-            href="https://www.linkedin.com/in/hvonhausen/"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
-              />
-            </svg>
-          </a>
-          <a
-            class="icon-btn"
-            href="mailto:hfvonhausen@uc.cl"
-            aria-label="Email"
-            title="hfvonhausen@uc.cl"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m2 7 10 6 10-6" />
-            </svg>
-          </a>
-          <a
-            class="icon-btn"
-            href="https://wa.me/56951291623"
-            target="_blank"
-            rel="noopener"
-            aria-label="WhatsApp"
-            title="WhatsApp +56 9 5129 1623"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-          </a>
-          <a
-            class="icon-btn"
-            href="https://github.com/hvonhausen/CV"
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub repo"
-            title="Source: github.com/hvonhausen/CV"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M12 .3A12 12 0 0 0 .3 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 23.7 12 12 12 0 0 0 12 .3"
-              />
-            </svg>
-          </a>
-        </nav>
-
-        <div class="cta-grid" aria-label="CV versions">
-          <div class="cta-card">
-            <span class="cta-flag">EN</span>
-            <h3 class="cta-title">English CV</h3>
-            <p class="cta-sub">Full résumé with summary, skills, experience</p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="./en/">View</a>
-              <a class="btn" href="./en/cv.pdf" download="CV_Hernan_von_Hausen_en.pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                PDF
-              </a>
-            </div>
-          </div>
-
-          <div class="cta-card">
-            <span class="cta-flag">ES</span>
-            <h3 class="cta-title">Currículum en Español</h3>
-            <p class="cta-sub">Versión completa con resumen, habilidades, experiencia</p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="./es/">Ver</a>
-              <a class="btn" href="./es/cv.pdf" download="CV_Hernan_von_Hausen_es.pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                PDF
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="hero-footer">
-        <p>
-          Source:
-          <a href="https://github.com/hvonhausen/CV" target="_blank" rel="noopener">
-            github.com/hvonhausen/CV
-          </a>
-          · Built from JSON · Deployed via GitHub Actions
-        </p>
-      </footer>
+      <article class="paper lang-hidden" id="cv-es" lang="es" role="main" aria-label="CV en Español">
+        {{{cvEs}}}
+      </article>
     </main>
+
+    <footer class="page-footer">
+      <p>
+        <a href="https://github.com/hvonhausen/CV" target="_blank" rel="noopener">github.com/hvonhausen/CV</a>
+        · Built from JSON · Deployed via GitHub Actions · {{buildDate}}
+      </p>
+    </footer>
+
+    <script>
+      var lang = 'en';
+      function switchLang() {
+        lang = lang === 'en' ? 'es' : 'en';
+        var isEn = lang === 'en';
+        document.getElementById('cv-en').classList.toggle('lang-hidden', !isEn);
+        document.getElementById('cv-es').classList.toggle('lang-hidden', isEn);
+        document.getElementById('lang-toggle').textContent = isEn ? 'Español' : 'English';
+        var btn = document.getElementById('pdf-btn');
+        btn.href = isEn ? './en/cv.pdf' : './es/cv.pdf';
+        btn.download = isEn ? 'CV_Hernan_von_Hausen_en.pdf' : 'CV_Hernan_von_Hausen_es.pdf';
+        document.documentElement.lang = lang;
+      }
+    </script>
   </body>
 </html>
