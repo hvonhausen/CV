@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hernan von Hausen — CV</title>
+    <meta name="description" content="Hernan von Hausen Cardenas — CV / Résumé. Choose a language." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .landing {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .landing-card {
+        background: var(--color-paper);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 48px 40px;
+        max-width: 460px;
+        width: 100%;
+        text-align: center;
+      }
+      .landing-card h1 {
+        font-size: 22px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 0 0 4px;
+      }
+      .landing-card p {
+        color: var(--color-ink-soft);
+        margin: 0 0 24px;
+      }
+      .lang-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .lang-link {
+        display: block;
+        padding: 18px 12px;
+        border: 1px solid var(--color-rule);
+        border-radius: 10px;
+        font-weight: 600;
+        color: var(--color-ink);
+        transition: all 0.15s;
+      }
+      .lang-link:hover {
+        background: var(--color-accent-soft);
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+      .lang-link small {
+        display: block;
+        font-weight: 400;
+        font-size: 13px;
+        color: var(--color-muted);
+        margin-top: 4px;
+      }
+      .footnote {
+        margin-top: 24px;
+        font-size: 13px;
+        color: var(--color-muted);
+      }
+      .footnote a {
+        color: var(--color-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="landing">
+      <div class="landing-card">
+        <h1>Hernan von Hausen</h1>
+        <p>Product Business Analyst · Santiago, Chile</p>
+        <div class="lang-grid">
+          <a class="lang-link" href="./en/">
+            English
+            <small>HTML + PDF</small>
+          </a>
+          <a class="lang-link" href="./es/">
+            Español
+            <small>HTML + PDF</small>
+          </a>
+        </div>
+        <p class="footnote">
+          <a href="https://www.linkedin.com/in/hvonhausen/" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          ·
+          <a href="mailto:hfvonhausen@uc.cl">hfvonhausen@uc.cl</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

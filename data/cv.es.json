@@ -1,0 +1,175 @@
+{
+  "lang": "es",
+  "locale": "es-CL",
+  "meta": {
+    "title": "Hernan von Hausen — CV",
+    "description": "Hernan von Hausen Cardenas — Product Business Analyst. Currículum / CV.",
+    "otherLangLabel": "English",
+    "otherLangHref": "../en/"
+  },
+  "labels": {
+    "downloadPdf": "Descargar PDF",
+    "summary": "Resumen Profesional",
+    "skills": "Habilidades Clave",
+    "experience": "Experiencia Profesional",
+    "courses": "Cursos",
+    "education": "Educación",
+    "references": "Referencias",
+    "present": "Presente",
+    "linkedin": "LinkedIn",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "location": "Ubicación"
+  },
+  "profile": {
+    "name": "Hernan von Hausen Cardenas",
+    "headline": "Product Business Analyst",
+    "location": "Santiago, Chile",
+    "phone": "+56 9 5129 1623",
+    "email": "hfvonhausen@uc.cl",
+    "linkedin": "https://www.linkedin.com/in/hvonhausen/",
+    "linkedinLabel": "linkedin.com/in/hvonhausen"
+  },
+  "summary": "Cuento con más de 4 años de experiencia impulsando decisiones basadas en datos en industrias de retail, movilidad y gastronomía. Actualmente trabajo en el área de producto, guiando la definición de requerimientos de producto, priorización de backlog y alineamiento entre stakeholders de un motor de inventario en tiempo real para uno de los retailers más grandes de Latinoamérica. Sólidas bases en Agile, SQL y analítica de producto.",
+  "skills": [
+    {
+      "group": "Producto",
+      "items": [
+        "Requerimientos de Producto (PRD)",
+        "Priorización de Backlog",
+        "Historias de usuario",
+        "Criterios de aceptación",
+        "Roadmap",
+        "Gestión de stakeholders",
+        "Liderazgo interfuncional"
+      ]
+    },
+    {
+      "group": "Metodologías",
+      "items": ["Agile", "Scrum", "Sprint Planning", "Kanban", "OKRs"]
+    },
+    {
+      "group": "Herramientas",
+      "items": [
+        "SQL",
+        "Python",
+        "Tableau",
+        "Power BI",
+        "Jira",
+        "Confluence",
+        "Notion",
+        "Excel",
+        "Integraciones MCP",
+        "Claude Code"
+      ]
+    },
+    {
+      "group": "Idiomas",
+      "items": [
+        "Español (Nativo)",
+        "Inglés (Profesional Avanzado)",
+        "Alemán (Intermedio)",
+        "Italiano (Básico)"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Product Business Analyst",
+      "company": "Cencosud S.A.",
+      "start": "Mar 2025",
+      "end": "Presente",
+      "bullets": [
+        "Defino los requisitos del producto, las historias de usuario, la priorización del backlog y la planificación de sprints para GIV e Inventory dentro del clúster de Order Management.",
+        "Actúo como enlace entre distintos stakeholders, traduciendo requisitos complejos en iniciativas técnicas a lo largo de todo el ciclo de vida del producto.",
+        "Utilizo Python, SQL y herramientas de IA para optimizar tareas y analizar y extraer datos, identificando áreas de optimización que sirven de base para las decisiones de priorización de roadmap."
+      ]
+    },
+    {
+      "role": "Global Internal Consulting Analyst",
+      "company": "Cabify",
+      "start": "Mar 2024",
+      "end": "Nov 2024",
+      "bullets": [
+        "Construí dashboards ejecutivos en Tableau para la toma de decisiones del C-suite en 8 mercados de LATAM en ciclos semanales, mensuales y trimestrales.",
+        "Diseñé pipelines de datos automatizados reduciendo la recopilación manual de datos y mejorando la velocidad de entrega de reportes.",
+        "Actué como puente entre distintos stakeholders, traduciendo insights de datos complejos en recomendaciones accionables para alta dirección."
+      ]
+    },
+    {
+      "role": "Business Analyst LATAM",
+      "company": "Cabify",
+      "start": "Ago 2023",
+      "end": "Mar 2024",
+      "bullets": [
+        "Creé reportería a medida para el Gerente Regional de LATAM alineada a requerimientos de negocio específicos en ciclos semanales, mensuales y trimestrales.",
+        "Realicé análisis de negocio complejos identificando cuellos de botella operacionales y oportunidades de mejora de procesos."
+      ]
+    },
+    {
+      "role": "Analista de Tecnología",
+      "company": "The Good Company SpA",
+      "start": "Ene 2022",
+      "end": "Ago 2023",
+      "bullets": [
+        "Administré sistemas de TI end-to-end (POS, Shopify, UberEats, Rappi, CRM Braze) para un holding gastronómico multimarca.",
+        "Desarrollé flujos de analítica automatizados con Power BI, SQL y Python, ayudando a la toma de decisiones a nivel táctico y estratégico.",
+        "Lideré la implementación de TI para nueva marca de cafetería (EspressHood) como contraparte principal del proveedor ParTech, gestionando plazos y despliegue de sistemas."
+      ]
+    },
+    {
+      "role": "Trabajo de Título / Práctica — Renta Fija",
+      "company": "Credicorp Capital S.A.",
+      "start": "Dic 2020",
+      "end": "Jul 2021",
+      "bullets": [
+        "Construí reporte automatizado de Renta Fija para los mercados colombiano y mexicano: construcción de curvas de tasas, extracción de tasas de política monetaria implícitas y valoración justa de bonos soberanos."
+      ]
+    },
+    {
+      "role": "Asistente de Cocina",
+      "company": "Mestizo Restaurant",
+      "start": "Ene 2020",
+      "end": "Mar 2020",
+      "bullets": [
+        "Operé en un entorno de alto volumen sirviendo a más de 700 clientes diarios, desarrollando habilidades de priorización y decisión rápida, optimización de flujos de trabajo y coordinación en tiempo real bajo presión constante."
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "Especialista en Automatización e IA",
+      "institution": "Desafío Latam",
+      "status": "En curso"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ingeniería Civil Industrial, Diploma en Ingeniería en Transporte",
+      "institution": "Pontificia Universidad Católica de Chile",
+      "period": "2015 - 2021"
+    },
+    {
+      "degree": "Intercambio Académico",
+      "institution": "Politécnico di Torino, Italia",
+      "period": "2019"
+    }
+  ],
+  "references": [
+    {
+      "name": "Pedro Pubill",
+      "role": "CEO, The Good Company SPA",
+      "email": "pedro.pubill@gmail.com"
+    },
+    {
+      "name": "Lucas Rangel",
+      "role": "Internal Consulting Sr. Manager, Cabify",
+      "email": "lucas.rangel@cabify.com"
+    },
+    {
+      "name": "Nicolás Cabello",
+      "role": "Sr. Product Owner, Cencosud",
+      "email": "nfcabello@uc.cl"
+    }
+  ]
+}

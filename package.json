@@ -1,0 +1,20 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal CV site — Hernan von Hausen. Generates HTML + PDF in English and Spanish.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:html": "SKIP_PDF=1 node scripts/build.mjs",
+    "serve": "npx --yes http-server dist -p 8080 -c-1",
+    "dev": "npm run build:html && npm run serve"
+  },
+  "dependencies": {
+    "mustache": "^4.2.0",
+    "puppeteer": "^23.11.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

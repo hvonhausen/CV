@@ -1,0 +1,175 @@
+{
+  "lang": "en",
+  "locale": "en-US",
+  "meta": {
+    "title": "Hernan von Hausen — CV",
+    "description": "Hernan von Hausen Cardenas — Product Business Analyst. Resume / CV.",
+    "otherLangLabel": "Español",
+    "otherLangHref": "../es/"
+  },
+  "labels": {
+    "downloadPdf": "Download PDF",
+    "summary": "Professional Summary",
+    "skills": "Core Skills",
+    "experience": "Professional Experience",
+    "courses": "Courses",
+    "education": "Education",
+    "references": "References",
+    "present": "Present",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location"
+  },
+  "profile": {
+    "name": "Hernan von Hausen Cardenas",
+    "headline": "Product Business Analyst",
+    "location": "Santiago, Chile",
+    "phone": "+56 9 5129 1623",
+    "email": "hfvonhausen@uc.cl",
+    "linkedin": "https://www.linkedin.com/in/hvonhausen/",
+    "linkedinLabel": "linkedin.com/in/hvonhausen"
+  },
+  "summary": "I have over four years of experience driving data-driven decisions in the retail, mobility, and food service industries. I currently work in product management, leading the definition of product requirements, backlog prioritization, and stakeholder alignment for a real-time inventory engine at one of Latin America's largest retailers. I have a strong foundation in Agile, SQL, and product analytics.",
+  "skills": [
+    {
+      "group": "Product",
+      "items": [
+        "Product Requirements (PRDs)",
+        "Backlog Prioritization",
+        "User Stories",
+        "Acceptance Criteria",
+        "Roadmap",
+        "Stakeholder Management",
+        "Cross-Functional Leadership"
+      ]
+    },
+    {
+      "group": "Methodologies",
+      "items": ["Agile", "Scrum", "Sprint Planning", "Kanban", "OKRs"]
+    },
+    {
+      "group": "Tools",
+      "items": [
+        "SQL",
+        "Python",
+        "Tableau",
+        "Power BI",
+        "Jira",
+        "Confluence",
+        "Notion",
+        "Excel",
+        "MCP Integrations",
+        "Claude Code"
+      ]
+    },
+    {
+      "group": "Languages",
+      "items": [
+        "Spanish (Native)",
+        "English (Full Professional)",
+        "German (Intermediate)",
+        "Italian (Basic)"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Product Business Analyst",
+      "company": "Cencosud S.A.",
+      "start": "Mar 2025",
+      "end": "Present",
+      "bullets": [
+        "Define product requirements, user stories, backlog prioritization, and sprint planning for GIV and Inventory within the Order Management cluster.",
+        "Act as a bridge between stakeholders, translating complex requirements into technical initiatives across the entire product lifecycle.",
+        "Leverage Python, SQL, and AI tools to optimize tasks and analyze and extract data, identifying optimization areas that inform roadmap prioritization decisions."
+      ]
+    },
+    {
+      "role": "Global Internal Consulting Analyst",
+      "company": "Cabify",
+      "start": "Mar 2024",
+      "end": "Nov 2024",
+      "bullets": [
+        "Built executive dashboards in Tableau for C-suite decision-making across 8 LATAM markets on weekly, monthly, and quarterly cycles.",
+        "Designed automated data pipelines reducing manual data gathering and improving report delivery speed.",
+        "Acted as a bridge between stakeholders, translating complex data insights into actionable recommendations for senior leadership."
+      ]
+    },
+    {
+      "role": "Business Analyst LATAM",
+      "company": "Cabify",
+      "start": "Aug 2023",
+      "end": "Mar 2024",
+      "bullets": [
+        "Created tailored reporting for the LATAM Regional Manager aligned to specific business requirements across weekly, monthly, and quarterly cycles.",
+        "Conducted complex business analysis identifying operational bottlenecks and process improvement opportunities."
+      ]
+    },
+    {
+      "role": "Technology Analyst",
+      "company": "The Good Company SpA",
+      "start": "Jan 2022",
+      "end": "Aug 2023",
+      "bullets": [
+        "Managed end-to-end IT systems (POS, Shopify, UberEats, Rappi, Braze CRM) for a multi-brand hospitality holding.",
+        "Developed automated analytics flows using Power BI, SQL, and Python, supporting tactical and strategic decision-making.",
+        "Led IT implementation for new cafeteria brand (EspressHood) as primary counterpart to vendor ParTech, managing timelines and system deployment."
+      ]
+    },
+    {
+      "role": "Thesis / Intern — Fixed Income",
+      "company": "Credicorp Capital S.A.",
+      "start": "Dec 2020",
+      "end": "Jul 2021",
+      "bullets": [
+        "Built automated Fixed Income reports for the Colombian and Mexican markets: rate curve construction, implied monetary policy rate extraction, and fair valuation of government bonds."
+      ]
+    },
+    {
+      "role": "Kitchen Assistant",
+      "company": "Mestizo Restaurant",
+      "start": "Jan 2020",
+      "end": "Mar 2020",
+      "bullets": [
+        "Operated in a high-throughput environment serving 700+ daily customers, developing rapid prioritization, workflow optimization, and real-time coordination skills under constant pressure."
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "Automation and AI Specialist",
+      "institution": "Desafío Latam",
+      "status": "In Progress"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Industrial Civil Engineering, Diploma in Transportation Engineering",
+      "institution": "Pontificia Universidad Católica de Chile",
+      "period": "2015 - 2021"
+    },
+    {
+      "degree": "Exchange Semester",
+      "institution": "Politecnico di Torino, Italy",
+      "period": "2019"
+    }
+  ],
+  "references": [
+    {
+      "name": "Pedro Pubill",
+      "role": "CEO, The Good Company SPA",
+      "email": "pedro.pubill@gmail.com"
+    },
+    {
+      "name": "Lucas Rangel",
+      "role": "Internal Consulting Sr. Manager, Cabify",
+      "email": "lucas.rangel@cabify.com"
+    },
+    {
+      "name": "Nicolas Cabello",
+      "role": "Sr. Product Owner, Cencosud",
+      "email": "nfcabello@uc.cl"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{meta.title}}</title>
+    <meta name="description" content="{{meta.description}}" />
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <meta property="og:type" content="profile" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="toolbar" role="banner">
+      <div class="toolbar-inner">
+        <div class="toolbar-left">{{profile.name}}</div>
+        <div class="toolbar-actions">
+          <a class="btn" href="{{meta.otherLangHref}}">{{meta.otherLangLabel}}</a>
+          <a class="btn btn-primary" href="./cv.pdf" download>
+            {{labels.downloadPdf}}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="paper" role="main">
+      <section class="header" aria-label="profile">
+        <h1 class="name">{{profile.name}}</h1>
+        <p class="headline">{{profile.headline}}</p>
+        <div class="contact">
+          <span>{{profile.location}}</span>
+          <span class="sep">|</span>
+          <span>{{profile.phone}}</span>
+          <span class="sep">|</span>
+          <a href="mailto:{{profile.email}}">{{profile.email}}</a>
+          <span class="sep">|</span>
+          <a href="{{profile.linkedin}}" target="_blank" rel="noopener">
+            {{profile.linkedinLabel}}
+          </a>
+        </div>
+      </section>
+
+      <section class="summary" aria-labelledby="sec-summary">
+        <h2 id="sec-summary">{{labels.summary}}</h2>
+        <p>{{summary}}</p>
+      </section>
+
+      <section aria-labelledby="sec-skills">
+        <h2 id="sec-skills">{{labels.skills}}</h2>
+        {{#skills}}
+        <div class="skill-row">
+          <div class="group">{{group}}</div>
+          <div class="items">{{itemsJoined}}</div>
+        </div>
+        {{/skills}}
+      </section>
+
+      <section aria-labelledby="sec-experience">
+        <h2 id="sec-experience">{{labels.experience}}</h2>
+        {{#experience}}
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title">
+              {{role}} <span class="company">| {{company}}</span>
+            </div>
+            <div class="job-date">{{start}} — {{end}}</div>
+          </div>
+          <ul>
+            {{#bullets}}<li>{{.}}</li>{{/bullets}}
+          </ul>
+        </article>
+        {{/experience}}
+      </section>
+
+      {{#hasCourses}}
+      <section aria-labelledby="sec-courses">
+        <h2 id="sec-courses">{{labels.courses}}</h2>
+        <ul class="simple-list">
+          {{#courses}}
+          <li>
+            <span class="primary">{{name}}</span>
+            <span class="secondary">{{institution}}</span>
+            <span class="meta">{{status}}</span>
+          </li>
+          {{/courses}}
+        </ul>
+      </section>
+      {{/hasCourses}}
+
+      <section aria-labelledby="sec-education">
+        <h2 id="sec-education">{{labels.education}}</h2>
+        <ul class="simple-list">
+          {{#education}}
+          <li>
+            <span class="primary">{{degree}}</span>
+            <span class="secondary">{{institution}}</span>
+            <span class="meta">{{period}}</span>
+          </li>
+          {{/education}}
+        </ul>
+      </section>
+
+      <section aria-labelledby="sec-references">
+        <h2 id="sec-references">{{labels.references}}</h2>
+        <div class="ref-grid">
+          {{#references}}
+          <div class="ref-card">
+            <p class="name">{{name}}</p>
+            <p class="role">{{role}}</p>
+            <a href="mailto:{{email}}">{{email}}</a>
+          </div>
+          {{/references}}
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Built from <a href="https://github.com/{{githubUser}}/CV">github.com/{{githubUser}}/CV</a>
+        · {{buildDate}}
+      </p>
+    </footer>
+  </body>
+</html>
