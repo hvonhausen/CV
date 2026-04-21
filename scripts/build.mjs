@@ -3,9 +3,10 @@
  * Build script: renders HTML per language, copies assets and source PDFs.
  *
  * Inputs:  data/cv.<lang>.json, data/cv.<lang>.pdf
- *          src/template.html   → individual language pages
- *          src/cv-partial.html → embedded CV content for root index
- *          src/landing.html    → root index shell (both languages combined)
+ *          src/template.html        → individual language pages
+ *          src/cv-body-partial.html → CV body (no header/summary) embedded
+ *                                     below the hero for both languages
+ *          src/landing.html         → root shell: hero + bilingual CV bodies
  *          src/styles.css, src/assets/*
  *
  * Output:  dist/index.html          (combined bilingual page with JS toggle)
@@ -102,8 +103,8 @@ async function main() {
     path.join(srcDir, "template.html"),
     "utf8"
   );
-  const partialTemplate = await fs.readFile(
-    path.join(srcDir, "cv-partial.html"),
+  const bodyPartialTemplate = await fs.readFile(
+    path.join(srcDir, "cv-body-partial.html"),
     "utf8"
   );
   const landingShell = await fs.readFile(
@@ -111,7 +112,9 @@ async function main() {
     "utf8"
   );
 
-  const partials = {};
+  const bodyPartials = {};
+  const hero = {};
+  let sharedProfile = null;
 
   for (const lang of LANGS) {
     const data = await readJson(path.join(dataDir, `cv.${lang}.json`));
@@ -121,8 +124,18 @@ async function main() {
     const pageHtml = Mustache.render(pageTemplate, view);
     await writeFile(path.join(distDir, lang, "index.html"), pageHtml);
 
-    // Embeddable partial for the combined root page
-    partials[lang] = Mustache.render(partialTemplate, view);
+    // Embeddable CV body (no header/summary — hero owns those)
+    bodyPartials[lang] = Mustache.render(bodyPartialTemplate, view);
+
+    // Hero data for this language
+    const topCompany = data.experience?.[0]?.company ?? "";
+    hero[lang] = {
+      headline: data.profile.headline,
+      affiliation: `${topCompany} · ${data.profile.location}`,
+      bio: data.summary,
+    };
+
+    if (!sharedProfile) sharedProfile = view.profile;
 
     // Copy source PDF verbatim
     const pdfSrc = path.join(dataDir, `cv.${lang}.pdf`);
@@ -137,10 +150,12 @@ async function main() {
     console.log(`  OK dist/${lang}/index.html`);
   }
 
-  // Root combined page — inject both partials then render shell variables
+  // Root combined page — hero with language-toggled text + both CV bodies
   const combined = Mustache.render(landingShell, {
-    cvEn: partials.en,
-    cvEs: partials.es,
+    profile: sharedProfile,
+    hero,
+    cvEnBody: bodyPartials.en,
+    cvEsBody: bodyPartials.es,
     buildDate: BUILD_DATE,
     githubUser: GITHUB_USER,
   });

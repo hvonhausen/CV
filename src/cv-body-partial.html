@@ -1,0 +1,67 @@
+<section aria-labelledby="sec-skills-{{lang}}">
+  <h2 id="sec-skills-{{lang}}">{{labels.skills}}</h2>
+  {{#skills}}
+  <div class="skill-row">
+    <div class="group">{{group}}</div>
+    <div class="items">{{itemsJoined}}</div>
+  </div>
+  {{/skills}}
+</section>
+
+<section aria-labelledby="sec-experience-{{lang}}">
+  <h2 id="sec-experience-{{lang}}">{{labels.experience}}</h2>
+  {{#experience}}
+  <article class="job">
+    <div class="job-head">
+      <div class="job-title">
+        {{role}} <span class="company">| {{company}}</span>
+      </div>
+      <div class="job-date">{{start}} — {{end}}</div>
+    </div>
+    <ul>
+      {{#bullets}}<li>{{.}}</li>{{/bullets}}
+    </ul>
+  </article>
+  {{/experience}}
+</section>
+
+{{#hasCourses}}
+<section aria-labelledby="sec-courses-{{lang}}">
+  <h2 id="sec-courses-{{lang}}">{{labels.courses}}</h2>
+  <ul class="simple-list">
+    {{#courses}}
+    <li>
+      <span class="primary">{{name}}</span>
+      <span class="secondary">{{institution}}</span>
+      <span class="meta">{{status}}</span>
+    </li>
+    {{/courses}}
+  </ul>
+</section>
+{{/hasCourses}}
+
+<section aria-labelledby="sec-education-{{lang}}">
+  <h2 id="sec-education-{{lang}}">{{labels.education}}</h2>
+  <ul class="simple-list">
+    {{#education}}
+    <li>
+      <span class="primary">{{degree}}</span>
+      <span class="secondary">{{institution}}</span>
+      <span class="meta">{{period}}</span>
+    </li>
+    {{/education}}
+  </ul>
+</section>
+
+<section aria-labelledby="sec-references-{{lang}}">
+  <h2 id="sec-references-{{lang}}">{{labels.references}}</h2>
+  <div class="ref-grid">
+    {{#references}}
+    <div class="ref-card">
+      <p class="name">{{name}}</p>
+      <p class="role">{{role}}</p>
+      <a href="mailto:{{email}}">{{email}}</a>
+    </div>
+    {{/references}}
+  </div>
+</section>

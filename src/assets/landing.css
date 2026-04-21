@@ -1,2 +1,151 @@
-/* landing.css — kept for any future landing-specific overrides */
-/* Avatar/hero styles removed; the root page now embeds the CV directly. */
+/* Landing page — academic-cv inspired hero + embedded CV */
+
+.landing-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(31, 77, 143, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 100% 100%, rgba(45, 108, 182, 0.06), transparent 55%),
+    var(--color-bg);
+}
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+}
+
+.hero-card {
+  width: 100%;
+  background: var(--color-paper);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, 0.04),
+    0 24px 60px rgba(17, 24, 39, 0.08);
+  padding: 48px 48px 36px;
+  text-align: center;
+}
+
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-accent-soft);
+  box-shadow:
+    0 0 0 6px #fff,
+    0 0 0 7px rgba(31, 77, 143, 0.18),
+    0 12px 28px rgba(17, 24, 39, 0.18);
+}
+
+.hero-name {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--color-ink);
+  line-height: 1.15;
+}
+
+.hero-role {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 2px;
+}
+
+.hero-affiliation {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+}
+
+.hero-bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  max-width: 560px;
+  margin: 0 auto 22px;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink-soft);
+  transition: all 0.18s ease;
+}
+
+.icon-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(31, 77, 143, 0.25);
+}
+
+.icon-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Language visibility helper */
+.lang-hidden { display: none !important; }
+
+/* CV body embedded below hero — spacing tweaks */
+main.cv-stack {
+  padding-top: 24px;
+}
+
+main.cv-stack .paper {
+  margin-top: 0;
+}
+
+/* Toolbar tweaks for landing */
+body.landing-body .toolbar-left {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+body.landing-body #lang-toggle {
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 16px 14px 0;
+  }
+  .hero-card {
+    padding: 32px 22px 24px;
+    border-radius: 14px;
+  }
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+  .hero-name {
+    font-size: 26px;
+  }
+}
