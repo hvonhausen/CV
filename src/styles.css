@@ -243,30 +243,35 @@ h2 {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 6px;
+  gap: 12px;
 }
 
 .simple-list li {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  row-gap: 2px;
+  align-items: baseline;
 }
 
 .simple-list .primary {
-  font-weight: 500;
+  grid-column: 1 / -1;
+  font-weight: 600;
   color: var(--color-ink);
 }
 
 .simple-list .secondary {
+  grid-column: 1;
   color: var(--color-ink-soft);
   font-size: 14px;
 }
 
 .simple-list .meta {
+  grid-column: 2;
   color: var(--color-muted);
   font-size: 13.5px;
   white-space: nowrap;
+  text-align: right;
 }
 
 .ref-grid {
