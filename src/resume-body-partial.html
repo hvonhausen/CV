@@ -1,0 +1,108 @@
+<section aria-labelledby="sec-summary-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-summary-{{lang}}">{{labels.summary}}</span>
+    <span class="rule"></span>
+    <span class="badge">01</span>
+  </div>
+  <p class="summary-block">{{summary}}</p>
+</section>
+
+<section aria-labelledby="sec-skills-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-skills-{{lang}}">{{labels.skills}}</span>
+    <span class="rule"></span>
+    <span class="badge">{{skills.length}} {{labels.skillsBadge}}</span>
+  </div>
+  <div class="skill-grid">
+    {{#skills}}
+    <div class="skill-card">
+      <h3 class="group">{{group}}</h3>
+      <ul>
+        {{#items}}<li>{{.}}</li>{{/items}}
+      </ul>
+    </div>
+    {{/skills}}
+  </div>
+</section>
+
+<section aria-labelledby="sec-experience-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-experience-{{lang}}">{{labels.experience}}</span>
+    <span class="rule"></span>
+    <span class="badge">{{experience.length}} {{labels.rolesBadge}}</span>
+  </div>
+  <div class="timeline">
+    {{#experience}}
+    <article class="timeline-row">
+      <div class="meta">
+        <div class="year">{{start}} — {{end}}</div>
+        <div class="company-line">
+          <span class="tick" aria-hidden="true"></span>
+          <span class="company">{{company}}</span>
+        </div>
+      </div>
+      <div class="body">
+        <h3 class="role">{{role}}</h3>
+        <div class="desc">
+          <ul>
+            {{#bullets}}<li>{{.}}</li>{{/bullets}}
+          </ul>
+        </div>
+      </div>
+    </article>
+    {{/experience}}
+  </div>
+</section>
+
+{{#hasCourses}}
+<section aria-labelledby="sec-courses-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-courses-{{lang}}">{{labels.courses}}</span>
+    <span class="rule"></span>
+    <span class="badge">{{courses.length}}</span>
+  </div>
+  <ul class="simple-list">
+    {{#courses}}
+    <li>
+      <span class="meta">{{status}}</span>
+      <span class="primary">{{name}}</span>
+      <span class="secondary">{{institution}}</span>
+    </li>
+    {{/courses}}
+  </ul>
+</section>
+{{/hasCourses}}
+
+<section aria-labelledby="sec-education-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-education-{{lang}}">{{labels.education}}</span>
+    <span class="rule"></span>
+    <span class="badge">{{education.length}}</span>
+  </div>
+  <ul class="simple-list">
+    {{#education}}
+    <li>
+      <span class="meta">{{period}}</span>
+      <span class="primary">{{degree}}</span>
+      <span class="secondary">{{institution}}</span>
+    </li>
+    {{/education}}
+  </ul>
+</section>
+
+<section aria-labelledby="sec-references-{{lang}}">
+  <div class="section-head">
+    <span class="label" id="sec-references-{{lang}}">{{labels.references}}</span>
+    <span class="rule"></span>
+    <span class="badge">{{references.length}}</span>
+  </div>
+  <div class="ref-grid">
+    {{#references}}
+    <div class="ref-card">
+      <p class="name">{{name}}</p>
+      <p class="role">{{role}}</p>
+      <a href="mailto:{{email}}">{{email}}</a>
+    </div>
+    {{/references}}
+  </div>
+</section>

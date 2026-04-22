@@ -9,9 +9,9 @@
   },
   "labels": {
     "downloadPdf": "Descargar PDF",
-    "summary": "Resumen Profesional",
+    "summary": "Resumen",
     "skills": "Habilidades Clave",
-    "experience": "Experiencia Profesional",
+    "experience": "Experiencia",
     "courses": "Cursos",
     "education": "Educación",
     "references": "Referencias",
@@ -19,7 +19,9 @@
     "linkedin": "LinkedIn",
     "email": "Correo",
     "phone": "Teléfono",
-    "location": "Ubicación"
+    "location": "Ubicación",
+    "skillsBadge": "Grupos",
+    "rolesBadge": "Cargos"
   },
   "profile": {
     "name": "Hernan von Hausen Cardenas",

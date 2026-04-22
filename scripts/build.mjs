@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 /**
- * Build script: renders HTML per language, copies assets and source PDFs.
+ * Build script: renders bilingual landing + resume pages from JSON data.
  *
  * Inputs:  data/cv.<lang>.json, data/cv.<lang>.pdf
- *          src/template.html        → individual language pages
- *          src/cv-body-partial.html → CV body (no header/summary) embedded
- *                                     below the hero for both languages
- *          src/landing.html         → root shell: hero + bilingual CV bodies
- *          src/styles.css, src/assets/*
+ *          src/landing.html              → intro page shell
+ *          src/resume.html               → resume page shell
+ *          src/resume-body-partial.html  → full CV body embedded twice per lang
+ *          src/styles.css
  *
- * Output:  dist/index.html          (combined bilingual page with JS toggle)
- *          dist/<lang>/index.html   (standalone pages kept for direct links)
- *          dist/<lang>/cv.pdf       (source PDF copied verbatim)
- *          dist/styles.css, dist/assets/*
+ * Output:  dist/index.html               (intro)
+ *          dist/resume/index.html        (full resume, bilingual toggle)
+ *          dist/<lang>/cv.pdf            (source PDF copied verbatim)
+ *          dist/styles.css
  */
 
 import fs from "node:fs/promises";
@@ -55,29 +54,12 @@ async function writeFile(dest, content) {
   await fs.writeFile(dest, content, "utf8");
 }
 
-async function copyDir(src, dest) {
-  try {
-    const entries = await fs.readdir(src, { withFileTypes: true });
-    for (const entry of entries) {
-      const s = path.join(src, entry.name);
-      const d = path.join(dest, entry.name);
-      if (entry.isDirectory()) await copyDir(s, d);
-      else await copyFile(s, d);
-    }
-  } catch (err) {
-    if (err.code === "ENOENT") return;
-    throw err;
-  }
-}
-
 function decorate(data) {
+  const courses = Array.isArray(data.courses) ? data.courses : [];
   return {
     ...data,
-    skills: data.skills.map((s) => ({
-      ...s,
-      itemsJoined: s.items.join(" \u2022 "),
-    })),
-    hasCourses: Array.isArray(data.courses) && data.courses.length > 0,
+    courses,
+    hasCourses: courses.length > 0,
     profile: {
       ...data.profile,
       phoneDigits: data.profile.phone.replace(/[^0-9]/g, ""),
@@ -97,22 +79,21 @@ async function main() {
     path.join(srcDir, "styles.css"),
     path.join(distDir, "styles.css")
   );
-  await copyDir(path.join(srcDir, "assets"), path.join(distDir, "assets"));
 
-  const pageTemplate = await fs.readFile(
-    path.join(srcDir, "template.html"),
-    "utf8"
-  );
-  const bodyPartialTemplate = await fs.readFile(
-    path.join(srcDir, "cv-body-partial.html"),
-    "utf8"
-  );
   const landingShell = await fs.readFile(
     path.join(srcDir, "landing.html"),
     "utf8"
   );
+  const resumeShell = await fs.readFile(
+    path.join(srcDir, "resume.html"),
+    "utf8"
+  );
+  const resumeBodyTemplate = await fs.readFile(
+    path.join(srcDir, "resume-body-partial.html"),
+    "utf8"
+  );
 
-  const bodyPartials = {};
+  const resumeBodies = {};
   const hero = {};
   let sharedProfile = null;
 
@@ -120,24 +101,15 @@ async function main() {
     const data = await readJson(path.join(dataDir, `cv.${lang}.json`));
     const view = decorate(data);
 
-    // Individual language page (kept for direct links / SEO)
-    const pageHtml = Mustache.render(pageTemplate, view);
-    await writeFile(path.join(distDir, lang, "index.html"), pageHtml);
+    resumeBodies[lang] = Mustache.render(resumeBodyTemplate, view);
 
-    // Embeddable CV body (no header/summary — hero owns those)
-    bodyPartials[lang] = Mustache.render(bodyPartialTemplate, view);
-
-    // Hero data for this language
-    const topCompany = data.experience?.[0]?.company ?? "";
     hero[lang] = {
       headline: data.profile.headline,
-      affiliation: `${topCompany} · ${data.profile.location}`,
       bio: data.summary,
     };
 
     if (!sharedProfile) sharedProfile = view.profile;
 
-    // Copy source PDF verbatim
     const pdfSrc = path.join(dataDir, `cv.${lang}.pdf`);
     try {
       await fs.access(pdfSrc);
@@ -146,21 +118,28 @@ async function main() {
     } catch {
       console.warn(`  WARN no source PDF for ${lang}`);
     }
-
-    console.log(`  OK dist/${lang}/index.html`);
   }
 
-  // Root combined page — hero with language-toggled text + both CV bodies
-  const combined = Mustache.render(landingShell, {
+  // Intro (landing)
+  const landingHtml = Mustache.render(landingShell, {
     profile: sharedProfile,
     hero,
-    cvEnBody: bodyPartials.en,
-    cvEsBody: bodyPartials.es,
     buildDate: BUILD_DATE,
     githubUser: GITHUB_USER,
   });
-  await writeFile(path.join(distDir, "index.html"), combined);
-  console.log("  OK dist/index.html (combined bilingual)");
+  await writeFile(path.join(distDir, "index.html"), landingHtml);
+  console.log("  OK dist/index.html (intro)");
+
+  // Resume page (bilingual, full CV body for both)
+  const resumeHtml = Mustache.render(resumeShell, {
+    profile: sharedProfile,
+    resumeEnBody: resumeBodies.en,
+    resumeEsBody: resumeBodies.es,
+    buildDate: BUILD_DATE,
+    githubUser: GITHUB_USER,
+  });
+  await writeFile(path.join(distDir, "resume", "index.html"), resumeHtml);
+  console.log("  OK dist/resume/index.html");
 
   await writeFile(path.join(distDir, ".nojekyll"), "");
   console.log("Build complete.");

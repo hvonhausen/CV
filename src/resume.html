@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{profile.name}} — Resume</title>
+    <meta name="description" content="{{profile.name}} — Resume / Curriculum. Bilingual, EN/ES." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="toolbar" role="banner">
+      <div class="toolbar-inner">
+        <div class="toolbar-left">
+          <a href="../" style="color:inherit;text-decoration:none">{{profile.name}}</a>
+        </div>
+        <div class="toolbar-actions">
+          <a class="pill" href="../">
+            <span class="lang-en">Intro</span><span class="lang-es lang-hidden">Intro</span>
+          </a>
+          <button class="pill" id="lang-toggle" type="button" onclick="switchLang()">Español</button>
+          <a class="pill pill-primary" id="pdf-btn"
+             href="../en/cv.pdf"
+             download="CV_Hernan_von_Hausen_en.pdf">
+            <span class="lang-en">Download CV</span><span class="lang-es lang-hidden">Descargar CV</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="slide" aria-label="Resume">
+      <div class="slide-inner">
+        <div class="slide-chrome">
+          <span><span class="lang-en">· Resume</span><span class="lang-es lang-hidden">· Curriculum</span></span>
+          <span class="slide-num">02</span>
+        </div>
+
+        <div class="lang-en" id="resume-en">
+          {{{resumeEnBody}}}
+        </div>
+        <div class="lang-es lang-hidden" id="resume-es">
+          {{{resumeEsBody}}}
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <a href="https://github.com/{{githubUser}}/CV" target="_blank" rel="noopener">github.com/{{githubUser}}/CV</a>
+      <span style="margin: 0 10px">·</span>
+      <span>{{buildDate}}</span>
+    </footer>
+
+    <script>
+      var lang = 'en';
+      function switchLang() {
+        lang = lang === 'en' ? 'es' : 'en';
+        var isEn = lang === 'en';
+        var enEls = document.querySelectorAll('.lang-en');
+        var esEls = document.querySelectorAll('.lang-es');
+        for (var i = 0; i < enEls.length; i++) enEls[i].classList.toggle('lang-hidden', !isEn);
+        for (var j = 0; j < esEls.length; j++) esEls[j].classList.toggle('lang-hidden', isEn);
+        document.getElementById('lang-toggle').textContent = isEn ? 'Español' : 'English';
+        var btn = document.getElementById('pdf-btn');
+        btn.href = isEn ? '../en/cv.pdf' : '../es/cv.pdf';
+        btn.download = isEn ? 'CV_Hernan_von_Hausen_en.pdf' : 'CV_Hernan_von_Hausen_es.pdf';
+        document.documentElement.lang = lang;
+      }
+    </script>
+  </body>
+</html>
